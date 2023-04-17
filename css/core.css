@@ -1,0 +1,63 @@
+/* CORE */
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Sono", sans-serif;
+    padding: 1rem;
+    /* hides blinking cursor on inputs */
+    caret-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+    margin-block: 1.6rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p a {
+    display: inline;
+    color: blue;
+    text-decoration: underline;
+}
+button,
+input {
+    font: inherit;
+    /* margin-block: 1rem; */
+}
+
+/* Hides arrow buttons in chrome */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+picture {
+    display: block;
+}
+
+img {
+    width: 100%;
+    display: block;
+    height: auto;
+}

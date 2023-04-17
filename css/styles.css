@@ -1,0 +1,248 @@
+/* TIMER APP */
+
+::selection {
+    background: #c0849570;
+}
+
+.timer__input {
+    appearance: textfield;
+}
+
+.app {
+    color: white;
+}
+
+.timer {
+    max-width: 500px;
+    padding: 2rem 2rem 0.002rem 2rem;
+    margin: auto;
+    text-align: center;
+    background: linear-gradient(to bottom right, #d41249, beige);
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 10px 2px #7a5a63;
+    position: relative;
+}
+
+.timer:before {
+    position: absolute;
+    content: "";
+    width: 112px;
+    height: 120px;
+    top: 93.9%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to top right, #eaa9ab 40%, #f0d5c7);
+    box-shadow: 0px 4px 10px 2px #7a5a63;
+    clip-path: polygon(-10% 33%, 110% 33%, 110% 115%, -10% 115%);
+}
+
+.timer__options {
+    margin-block: 2rem;
+}
+
+.set-timer-button {
+    display: block;
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ca325d;
+    box-shadow: 0px 2px 3px 1px #860f31;
+    margin: auto;
+    margin-top: -1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in;
+}
+
+.set-timer-button:active {
+    transform: scale(1.2);
+}
+
+.set-timer-button__wrapper {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+/* PLAY BUTTON SPANS ANIMATION */
+
+.set-timer-button__bar {
+    display: block;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.set-timer-button__bar--top {
+    height: 14%;
+    width: 120%;
+    background: #f3ebd5;
+    top: 0;
+    left: 0;
+    transform-origin: 15% 10%;
+    transform: rotate(26deg);
+    transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), width 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.set-timer-button__bar--right {
+    width: 14%;
+    height: 0;
+    background: #f3ebd5;
+    right: 0;
+    bottom: 0;
+    transition: height 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.set-timer-button__bar--bottom {
+    width: 114%;
+    height: 14%;
+    background: #f3ebd5;
+    bottom: 0;
+    left: 0;
+    /* x and y axis */
+    transform-origin: 4% 10%;
+    transform: rotate(-24deg);
+    transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), width 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.set-timer-button__bar--left {
+    background: #f3ebd5;
+    border-radius: 8px;
+    width: 14%;
+    height: 100%;
+    bottom: 0;
+    left: -1px;
+}
+
+.rotate-to-square {
+    transform: rotate(0);
+    width: 96%;
+}
+
+.fade-in {
+    height: 100%;
+}
+
+button[disabled] {
+    color: #ddc8c8;
+}
+
+input[disabled] {
+    color: #ddc8c8;
+}
+
+.timer__play-icon {
+    width: 50px;
+}
+
+.timer__heading {
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.timer__inputs-container {
+    display: flex;
+    gap: 0.4rem;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.timer__inputs {
+    flex: 1 1 50%;
+    display: flex;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    background-color: #ca325d;
+    box-shadow: 0px 2px 3px 1px #860f31;
+    border-radius: 0.4rem;
+}
+
+.timer__section {
+    width: 40%;
+}
+
+.timer__button {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: 0.2rem;
+}
+
+.timer__button:hover {
+    background: #c0849570;
+}
+
+.timer__button:active {
+    background: #ac4462;
+}
+
+.timer__input {
+    width: 4ch;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    background: none;
+    border-radius: 0.5rem;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.timer__input:hover {
+    background: #c0849570;
+}
+
+.timer__button {
+    display: block;
+}
+
+.timer__image {
+    max-width: 250px;
+    margin: auto;
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* ANIMATION WHEN TIMER STARTS */
+
+.timer-start {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0;
+    transition: left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.timer-running {
+    left: 70%;
+    opacity: 1;
+}
+
+.image-move {
+    transform: translateX(-30%);
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 27rem) {
+    .timer__inputs-container {
+        flex-wrap: nowrap;
+    }
+
+    .timer:before {
+        height: 18.2%;
+    }
+
+    .timer-start {
+        top: 50%;
+    }
+}

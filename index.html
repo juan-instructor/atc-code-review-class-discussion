@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>setTimeout Exercises</title>
+    <link rel="stylesheet" type="text/css" href="css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/core.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="timer-app" class="app">
+        <section id="timer" class="timer timer-container">
+            <h1 class="timer__heading">ATC Timer</h1>
+            <div id="timer-display-area" class="timer__display-area">
+                <picture id="timer-image" class="timer__image"><img src="assets/timer.svg" alt="timer icon" /></picture>
+                <p id="timer-display" class="timer-start">05:30</p>
+            </div>
+            <form class="timer__options" >
+                <div class="timer__inputs-container">
+                    <div class="timer__inputs">
+                        <div class="timer__buttons-container">
+                            <button type="button" id="button-minutes-up" class="timer__button">+</button>
+                            <button type="button" id="button-minutes-down" class="timer__button">-</button>
+                        </div>
+                        <p class="timer__section">
+                            <!-- Event though we are showing the label at all, -->
+                            <!-- it is best practice to have an input with a label always -->
+                            <label for="minutes"></label>
+                            <input id="minutes" type="number" class="timer__input" min="0" value="5" required />
+                        </p>
+                        <span class="timer__type">min.</span>
+                    </div>
+                    <div class="timer__inputs">
+                        <div class="timer__button-container">
+                            <button type="button" id="button-seconds-up" class="timer__button">+</button>
+                            <button type="button" id="button-seconds-down" class="timer__button">-</button>
+                        </div>
+                        <p class="timer__section">
+                            <label for="seconds"></label>
+                            <input id="seconds" type="number" class="timer__input" min="0" max="60" value="30"
+                                required />
+                        </p>
+                        <span class="timer__type">sec.</span>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <button id="setup-timer-button" class="set-timer-button">
+            <span class="set-timer-button__wrapper">
+                <span id="set-timer-button-top-bar" class="set-timer-button__bar set-timer-button__bar--top"></span>
+                <span id="set-timer-button-right-bar" class="set-timer-button__bar set-timer-button__bar--right"></span>
+                <span id="set-timer-button-bottom-bar" class="set-timer-button__bar set-timer-button__bar--bottom"></span>
+                <span class="set-timer-button__bar set-timer-button__bar--left"></span>
+            </span>
+        </button>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
